@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"]= "POST"){
     if($password!=$cpassword){
         $validatecpassword = "Password doesn't match.";
     }
-if(!isset($_REQUEST["vehicle1"]) && !isset($_REQUEST["vehicle2"]) && !isset($_REQUEST["vehicle3"]))
+if(!isset($_REQUEST["gender1"]) && !isset($_REQUEST["gender1"]) && !isset($_REQUEST["gender1"]))
 {
     echo "Please select one gender.";
     
