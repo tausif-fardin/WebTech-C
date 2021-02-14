@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <body>
-<?php>
+<?php
 
 $validatename="";
 $validatemail="";
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
+    $name=$_REQUEST["name"];
+    $email=$_REQUEST["email"];
     if(empty($name))
 {
     $validatename = "You must enter your name.";
@@ -24,10 +26,12 @@ else{
 }
 }
 ?>
-<php?>
-<form action="<?php echo $_SERVER["PHP_SELF"];?> method="post">
-Name: <input type="text" name="name"><?php echo $validatename;?><br>
-E-mail: <input type="text" name="email"><?php echo $validatename;?><br>
+<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+Name: <input type="text" name="name"><?php echo $validatename;?>
+<br>
+<br>
+E-mail: <input type="text" name="email"><?php echo $validatemail;?><br>
+<br>
 <input type="submit" value= "SUBMIT">
 </form>
 </body>
