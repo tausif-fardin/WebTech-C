@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"]= "POST"){
         $validateemail = "Valid Email is required";
     } 
     else{
-        $email = "Invalid email format";
+        $email = "Your email is".$email;
     }
     if(empty($password) || (strlen($password))<6 || !preg_match("@#$%",$password))
     {
