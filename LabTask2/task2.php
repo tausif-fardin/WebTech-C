@@ -11,13 +11,13 @@ $validatename=$validateemail=$name=$email=$validatepassword=$password=$validateu
 $validatecpassword=$cpassword=$v1=$v2=$v3="";
 
 if($_SERVER["REQUEST_METHOD"]= "POST"){
-    $name = $_REQUEST["firstname"];
+    $name = $_REQUEST["firstName"];
     $email = $_REQUEST["email"];
     $username = $_REQUEST["userName"];
     $password = $_REQUEST["password"];
     $cpassword = $_REQUEST["cpassword"];
 
-    if(empty($_POST["firstName"])||!preg_match("/^[a-zA-Z ]*$/",$name))
+    if(empty($_POST["firstName"])||!preg_match("/^[a-zA-Z-' ]*$/",$name))
     {
         $validatename="Valid Name is required.";
     }else{
