@@ -9,11 +9,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     $name=$_REQUEST["name"];
     $email=$_REQUEST["email"];
-    if(empty($name))
+    if(empty($name) || (strlen($name))<3)
 {
-    $validatename = "You must enter your name.";
+    $validatename = "You must enter a valid name.";
 }
-else{
+else
+{
     $validatename = "Your name is ".$name;
 }
 
@@ -32,6 +33,13 @@ Name: <input type="text" name="name"><?php echo $validatename;?>
 <br>
 E-mail: <input type="text" name="email"><?php echo $validatemail;?><br>
 <br>
+<input type="checkbox" id="vehicle1" name = "vehicle1" value = "Bike">
+<label for="vehicle1">I have a Bike</label><br>
+<input type="checkbox" id="vehicle2" name = "vehicle2" value = "Car">
+<label for="vehicle2">I have a Bike</label><br>
+<input type="checkbox" id="vehicle3" name = "vehicle3" value = "Boat">
+<label for="vehicle3">I have a Bike</label><br>
+
 <input type="submit" value= "SUBMIT">
 </form>
 </body>
