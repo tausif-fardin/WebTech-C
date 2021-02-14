@@ -6,6 +6,7 @@
 $validatename="";
 $validatemail="";
 $validatecheckbox="";
+$v1=$v2=$v3="";
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     $name=$_REQUEST["name"];
@@ -28,21 +29,19 @@ else{
 }
 
 
-if(isset($_REQUEST["vehicle1"]) && isset($_REQUEST["vehicle2"]) && isset($_REQUEST["vehicle3"]))
+if(!isset($_REQUEST["vehicle1"]) && !isset($_REQUEST["vehicle2"]) && !isset($_REQUEST["vehicle3"]))
 {
     echo "Please select one vehicle.";
     
 }else{
-    $v1=$_REQUEST["vehicle1"];
-    $v2=$_REQUEST["vehicle2"];
-    $v3=$_REQUEST["vehicle3"];
-    if(isset($v1)){
-        echo $v1;
+
+    if(isset($_REQUEST["vehicle1"])){
+        echo $v1=$_REQUEST["vehicle1"];
     }
-    elseif(isset($v2)){
-        echo $v2;
-    }elseif(isset($v3)){
-        echo $v3;
+    elseif(isset($_REQUEST["vehicle2"])){
+        echo $v2=$_REQUEST["vehicle2"];
+    }elseif(isset($_REQUEST["vehicle3"])){
+        echo $v3=$_REQUEST["vehicle3"];
     }
 
 }
@@ -61,6 +60,11 @@ E-mail: <input type="text" name="email"><?php echo $validatemail;?><br>
 <input type="checkbox"  name = "vehicle3" value = "Boat">
 <label for="vehicle3">I have a Bike</label><br>
 <?php echo $validatecheckbox;?>
+<?php echo $v1;?>
+<?php echo $v2;?>
+<?php echo $v3;?>
+
+
 <input type="submit" value= "SUBMIT">
 </form>
 </body>
