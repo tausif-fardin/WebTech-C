@@ -2,7 +2,7 @@
 
 class MyCircle
 {
-    private $radius;
+    private $radius = 0;
 
     public function __construct($radius = 1)
     {
@@ -30,3 +30,4 @@ class MyCircle
 $c1 = new MyCircle();
 $c1->setRadius(8);
 echo "Area is " . $c1->__toString();
+?>
