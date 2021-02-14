@@ -23,3 +23,4 @@ foreach ($movies as $x1 => $x_value) {
     echo "Key=" . $x1 . ",Value=" . $x_value;
     echo "<br>";
 }
+?>
